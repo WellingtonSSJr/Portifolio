@@ -113,7 +113,7 @@ function Home() {
                     <p className='break-words max-sm:w-fit w-[35rem] text-[#929292] font-bold leading-8'>Nesta seção eu descrevo um pouco de mim. Como me vejo no quesito habilidades e também se tratando de comportamento organizacional.</p>
                 </div>
 
-                <div className='flex max-sm:flex-col  flex-row justify-between w-full max-sm:gap-0 gap-5'>
+                <div className='flex max-md:flex-col max-sm:flex-col  flex-row justify-between w-full max-sm:gap-0 gap-5'>
                     <div className='flex  flex-col  w-full h-96 max-sm:h-fit max-sm:py-8 relative'>
                         <div className='border-[#32FF5F] text-[#1A4027] text-3xl font-black border-1 max-sm:w-72 w-96 text-right px-4 py-2 rounded-r shadow absolute border-l-0'>
                             SKILLS<span className='text-[#1ED760]'>.</span>
@@ -148,7 +148,7 @@ function Home() {
 
                             {/* SEÇÃO PROJETOS */}
             <section id='projetos' className='flex flex-col justify-center items-center gap-15  my-8 w-full max-sm:h-fit '>
-                <div className='flex items-start max-sm:gap-0 max-sm:items-center'>
+                <div className='flex items-start max-sm:gap-0  max-sm:items-center'>
                     <h1 className='text-5xl max-sm:rotate-270  font-black text-white '>
                         PRO<br/>
                         JETOS<span className='text-[#1ED760]'>.</span>
@@ -156,25 +156,68 @@ function Home() {
                     <p className='break-words max-sm:w-fit max-sm:px-3 w-[25rem] text-[#929292] font-bold leading-8 max-sm:leading-7'>Essa seção é destinada a mostrar meus projetos pessoais e corporativos onde pratico e desenvolvo minhas habilidades.</p>
                 </div>   
 
-                 <div className='flex max-sm:flex-col  flex-col justify-between w-full max-sm:gap-0 gap-5'>
+                 <div className='flex max-sm:flex-col flex-col  w-full  max-sm:gap-0 gap-5 '>
                     {/* PROJETO 1 */}
-                            <div className='flex  flex-col gap-10 w-full h-96  max-sm:h-fit max-sm:py-8 relative '>
+                            <div className='flex  flex-col gap-10 w-full  max-sm:h-fit max-sm:py-8 relative '>
 
                                 <div className='border-[#32FF5F] text-[#1A4027] text-3xl font-black border-1 max-sm:w-72 w-96 text-right px-4 py-2 rounded-r shadow absolute border-l-0'>
                                     PROJETO 1<span className='text-[#1ED760]'>.</span>
                                 </div>
 
-                                <div className='mt-20 w-fit py-2 px-4 ml-8'>
-                                        <Carrossel images={[image1, image2, image3]}/>
+                            {/* DIV PROJETO */}
+                                <div className='mt-20 w-fit p-2 flex flex-row gap-4 max-sm:flex-col max-md:flex-col'>
+                                        <Carrossel images={[image1, image2, image3, image3]}/>
+
+                                        {/* DESCRIÇÃO DO PROJETO */}
+                                        <div className='mt-4'>
+                                            <h2 className='before:content-[""] before:w-2 before:h-4 before:bg-[#1ED760] before:inline-block before:rounded before:shadow before:mr-2 text-2xl text-[#1A4027] font-bold'>Projeto Exemplo</h2>
+                                            <p className='break-words max-sm:w-fit max-sm:px-3 w-[25rem] text-[#929292]  leading-8 max-sm:leading-7'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, aut.</p>
+
+
+                                            {/* TECNOLOGIAS USADAS */}
+                                           <div className='ml-2'>
+                                                 <h2 className='before:content-[""] before:w-1 before:h-2 before:bg-[#1ED760] before:inline-block before:rounded before:shadow before:mr-2 text-[16px] text-[#1A4027] font-bold mt-3 flex items-center'>Tecnologias</h2>
+                                            <div className='flex gap-2 flex-wrap *:shadow mt-2'>
+                                                
+                                                <span className='text-white shadow-[#1A4027] bg-[#1A4027] border-[#1ED760] border-1 rounded py-1 px-3'>react</span>
+                                                <span className='text-white shadow-[#1A4027] bg-[#1A4027] border-[#1ED760] border-1 rounded py-1 px-3'>Tailwind</span>
+                                                <span className='text-white shadow-[#1A4027] bg-[#1A4027] border-[#1ED760] border-1 rounded py-1 px-3'>Node</span>
+                                                <span className='text-white shadow-[#1A4027] bg-[#1A4027] border-[#1ED760] border-1 rounded py-1 px-3'>PgAdmin</span>
+                                            </div>
+                                           </div>
+                                        </div>
                                 </div>
 
                             </div>
 
                     {/* PROJETO 2 */}
-                            <div className='w-full h-96 max-sm:h-fit max-sm:py-8 relative flex flex-col items-center'>
-                            <div className='border-[#32FF5F] absolute  text-[#1A4027] text-3xl border-1 font-black max-sm:w-72 w-96 shadow text-left  px-4 py-2 rounded-l border-r-0 right-0'>
-                            PROJETO 2<span className='text-[#1ED760]'>.</span>
-                            </div>
+                            <div className='w-full max-sm:h-fit max-sm:py-8 relative flex flex-col items-center'>
+                                <div className='border-[#32FF5F] absolute  text-[#1A4027] text-3xl border-1 font-black max-sm:w-72 w-96 shadow text-left  px-4 py-2 rounded-l border-r-0 right-0'>
+                                PROJETO 2<span className='text-[#1ED760]'>.</span>
+                                </div>
+
+                                <div className='mt-20 w-fit p-2 flex flex-row-reverse gap-4 max-sm:flex-col max-md:flex-col'>
+                                        <Carrossel images={[image1, image2, image3, image3]}/>
+
+                                        {/* DESCRIÇÃO DO PROJETO */}
+                                        <div className='mt-4'>
+                                            <h2 className='before:content-[""] before:w-2 before:h-4 before:bg-[#1ED760] before:inline-block before:rounded before:shadow before:mr-2 text-2xl text-[#1A4027] font-bold'>Projeto Exemplo</h2>
+                                            <p className='break-words max-sm:w-fit max-sm:px-3 w-[25rem] text-[#929292]  leading-8 max-sm:leading-7'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, aut.</p>
+
+
+                                            {/* TECNOLOGIAS USADAS */}
+                                           <div className='ml-2'>
+                                                 <h2 className='before:content-[""] before:w-1 before:h-2 before:bg-[#1ED760] before:inline-block before:rounded before:shadow before:mr-2 text-[16px] text-[#1A4027] font-bold mt-3 flex items-center'>Tecnologias</h2>
+                                            <div className='flex gap-2 flex-wrap *:shadow mt-2'>
+                                                
+                                                <span className='text-white shadow-[#1A4027] bg-[#1A4027] border-[#1ED760] border-1 rounded py-1 px-3'>react</span>
+                                                <span className='text-white shadow-[#1A4027] bg-[#1A4027] border-[#1ED760] border-1 rounded py-1 px-3'>Tailwind</span>
+                                                <span className='text-white shadow-[#1A4027] bg-[#1A4027] border-[#1ED760] border-1 rounded py-1 px-3'>Node</span>
+                                                <span className='text-white shadow-[#1A4027] bg-[#1A4027] border-[#1ED760] border-1 rounded py-1 px-3'>PgAdmin</span>
+                                            </div>
+                                           </div>
+                                        </div>
+                                </div>
                             
                             </div>
                  </div>

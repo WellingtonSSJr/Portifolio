@@ -4,24 +4,39 @@ import { motion } from "motion/react"
 import tt from './../../assets/images/imagem1.jpg'
 
 function Carrossel(props) {
-    console.log(props.images);
-    
+    const carrosssel = React.useRef()
+    const [width, setWidth] = React.useState(0)
+
+    React.useEffect(()=>{
+        // console.log(carrosssel.current?.scrollWidth, carrosssel.current?.offsetWidth);
+        setWidth(carrosssel.current?.scrollWidth - carrosssel.current?.offsetWidth)
+    },[])
   return (
     <div>       
-                <motion.div className=' w-dvh p-4 border-amber-300 border-1'>
-                    <motion.div className="flex flex-row items-center justify-center gap-4">
-                        {
-                            props.images?.map((item, index) =>{
-                                return(
-                                    <motion.div className="overflow-clip box-content h-[280px] w-[340px] rounded shadow inline-block ">
-                                        <img src={`/src${item.slice(4)}`} alt="imagens de projetos" key={index} className='w-fit h-fit'/>
-                                    </motion.div>
-                                )
-                            })
-                        }
+                <motion.div ref={carrosssel} className="max-w-full max-sm:w-93  overflow-hidden"
+                    whileTap={{cursor: "grabbing"}}
+                >
+                    <motion.div className="flex flex-nowrap gap-2 w-max py-2"
+                        drag="x"
+                        dragConstraints={{right: 0, left: -width}}
+                        initial={{x: 100}}
+                        animate={{x:0}}
+                        transition={{duration: 0.8}}
+                    >
+                        {props.images?.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                className="max-sm:h-40 h-[280px] w-fir flex-shrink-0 rounded shadow"
+                            >
+                                <img
+                                src={`/src${item.slice(4)}`}
+                                alt="imagem de projeto"
+                                className="w-full h-full object-contain rounded shadow"
+                                />
+                            </motion.div>
+                        ))}
                     </motion.div>
-                </motion.div>
-          
+                </motion.div>          
     </div>
   )
 }
