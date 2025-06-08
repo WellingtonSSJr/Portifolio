@@ -13,8 +13,6 @@ import linkedin from './../../assets/icons/linkedin.png';
 import openCloseModalCtt from './../../assets/icons/openCloseModalCtt.svg';
 import Carrossel from '../../Components/Carrossel/Carrossel';
 import { motion } from "framer-motion";
-import { darkMode } from '../../../tailwind.config';
-
 function Home() {
     // Seus estados existentes
     const [menuAberto, setMenuAberto] = useState(false);
