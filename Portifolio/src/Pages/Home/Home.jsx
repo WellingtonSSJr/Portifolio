@@ -58,15 +58,13 @@ function Home() {
             <div className='relative overflow-hidden min-h-dvh flex flex-col'>
                 <img src={imageBg} alt="background decorativo" className="absolute z-0 -left-10 max-sm:mt-15 max-sm:-left-18 top-6 opacity-20 dark:opacity-10" />
                 
-                {/* HEADER: Aplicando cores de tema e adicionando o botão */}
                 <header className="fixed left-0 right-0 flex items-center justify-between px-4 sm:px-10 py-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md z-20">
                     <div className="min-w-28 h-max p-2 flex items-center gap-3">
                         <img src={fotoPerfil} alt="Foto de Perfil" className="sm:hidden h-12 w-12 shrink-0 rounded-full" />
-                        {/* Logo também pode mudar de cor se for um SVG com currentColor */}
                         <img src={logowelldev} alt="Logo Welldev" className="h-6" />
                     </div>
-                    <p className={`${theme === 'dark' }`}>teste</p>
-                    {/* Menu padrão (desktop) com botão de tema */}
+
+                    {/* Menu padrão */}
                     <nav className="hidden sm:flex items-center gap-4">
                         <ul className="flex gap-6 text-[#1A4027] dark:text-gray-200 font-semibold">
                             <li><a href="/" className="hover:text-[#1ED760] transition-colors">HOME</a></li>
@@ -77,7 +75,7 @@ function Home() {
                         <ThemeToggleButton />
                     </nav>
 
-                    {/* Container para botões no mobile */}
+                    {/* Container mobile */}
                     <div className="sm:hidden flex items-center gap-2">
                         <ThemeToggleButton />
                         <button
@@ -148,7 +146,7 @@ function Home() {
                 {/* SEÇÃO SOBRE */}
                 <section id='sobre' className='flex flex-col justify-center items-center gap-12 my-8 w-full max-w-6xl mx-auto'>
                     <div className='flex flex-col md:flex-row items-center gap-4 md:gap-8'>
-                        <motion.h1 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="text-5xl font-black text-gray-800 dark:text-white text-center md:text-left">
+                        <motion.h1 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="text-5xl font-black text-gray-800 dark:text-white text-left md:text-left">
                             SO<br />
                             BRE<span className="text-[#1ED760] animate-pulse drop-shadow-[0_0_6px_#1ED760]">.</span>
                         </motion.h1>
@@ -187,7 +185,7 @@ function Home() {
                 {/* SEÇÃO PROJETOS */}
                 <section id='projetos' className='flex flex-col justify-center items-center gap-12 my-8 w-full max-w-6xl mx-auto'>
                      <div className='flex flex-col md:flex-row items-center gap-4 md:gap-8'>
-                        <motion.h1 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="text-5xl font-black text-gray-800 dark:text-white text-center md:text-left">
+                        <motion.h1 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="text-5xl font-black text-gray-800 dark:text-white text-left md:text-left">
                             PRO<br />
                             JETOS<span className="text-[#1ED760] animate-pulse drop-shadow-[0_0_6px_#1ED760]">.</span>
                         </motion.h1>
@@ -244,7 +242,7 @@ function Home() {
                 {/* SEÇÃO CONTATO */}
                 <section id='contatos' className='flex flex-col justify-center items-center gap-8 my-8 w-full max-w-6xl mx-auto min-h-[50vh]'>
                     <div className='flex flex-col md:flex-row items-center gap-4 md:gap-8'>
-                        <motion.h1 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="text-5xl font-black text-gray-800 dark:text-white text-center md:text-left">
+                        <motion.h1 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="text-5xl font-black text-gray-800 dark:text-white text-left md:text-left">
                             CON<br />
                             TATOS<span className="text-[#1ED760] animate-pulse drop-shadow-[0_0_6px_#1ED760]">.</span>
                         </motion.h1>
