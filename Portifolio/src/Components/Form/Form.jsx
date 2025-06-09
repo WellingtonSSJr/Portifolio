@@ -1,0 +1,92 @@
+import { useRef, useState } from 'react';
+import emailjs from 'emailjs-com';
+
+export default function Form() {
+  const form = useRef();
+  const [status, setStatus] = useState('');
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_ncizcp5',
+        'template_ogqe4tl',
+        form.current,
+        'q-YKonERyz7de-XTV'
+      )
+      .then(
+        () => {
+          setStatus('Mensagem enviada com sucesso!');
+          form.current.reset();
+        },
+        () => {
+          setStatus('Erro ao enviar. Tente novamente.');
+        }
+      );
+  };
+
+  return (
+    <div className="min-h-screen bg-light-bg text-black dark:bg-dark-bg dark:text-white transition-colors duration-300 p-4">
+      <form ref={form} onSubmit={sendEmail} className="space-y-4 max-w-md">
+        <div>
+          <label htmlFor="name" className="block mb-1 font-medium text-[#1A4027]">
+            Nome
+          </label>
+          <input
+            type="text"
+            name="user_name"
+            required
+            className="border-b w-full p-2 rounded  border-amber-700  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block mb-1 font-medium text-[#1A4027]">
+            E-mail
+          </label>
+          <input
+            type="email"
+            name="user_email"
+            required
+            className="border-b w-full p-2 rounded  border-amber-700  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+          />
+        </div>
+        <div>
+          <label htmlFor="assunto" className="block mb-1 font-medium text-[#1A4027]">
+            Assunto
+          </label>
+          <input
+            type="assunto"
+            name="user_assunto"
+            required
+            className="border-b w-full p-2 rounded  border-amber-700  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="message" className="block mb-1 font-medium text-[#1A4027]">
+            Mensagem
+          </label>
+          <textarea
+            name="message"
+            rows="5"
+            required
+            className="border-b w-full p-2 rounded  border-amber-700  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="bg-amber-500 dark:bg-brand-dark-green text-amber-200 px-4 py-2 rounded hover:opacity-90"
+        >
+          Enviar
+        </button>
+
+        {status && (
+          <p className="text-sm mt-2 text-green-600 dark:text-green-400">{status}</p>
+        )}
+      </form>
+    </div>
+  );
+}
