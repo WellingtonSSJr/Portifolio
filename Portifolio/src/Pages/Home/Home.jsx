@@ -14,6 +14,7 @@ import openCloseModalCtt from './../../assets/icons/openCloseModalCtt.svg';
 import Carrossel from '../../Components/Carrossel/Carrossel';
 import { motion } from "framer-motion";
 import Form from '../../Components/Form/Form';
+import Teste from '../../Components/teste/teste';
 function Home() {
     // Seus estados existentes
     const [menuAberto, setMenuAberto] = useState(false);
@@ -30,9 +31,9 @@ function Home() {
         console.log(root);
         
         if (theme === 'dark') {
-            root.classList.add('dark');
+            root.setAttribute('data-theme', 'dark');
         } else {
-            root.classList.remove('dark');
+            root.removeAttribute('data-theme', 'light');
         }
         localStorage.setItem('theme', theme);
     }, [theme]);
@@ -57,7 +58,7 @@ function Home() {
     return (
         <div className="bg-[#b4b4b4] dark:bg-[#111827] text-black dark:text-white transition-colors duration-300">
             <div className='relative overflow-hidden min-h-dvh flex flex-col'>
-                <img src={imageBg} alt="background decorativo" className="absolute z-0 -left-10 max-sm:mt-15 max-sm:-left-18 top-6 opacity-20 dark:opacity-10" />
+                <img src={imageBg} alt="background decorativo" className="absolute z-0 -left-10 max-sm:mt-18 max-sm:-left-18 top-16 opacity-20 dark:opacity-10" />
                 
                 <header className="fixed left-0 right-0 flex items-center justify-between px-4 sm:px-10 py-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md z-20">
                     <div className="min-w-28 h-max p-2 flex items-center gap-3">

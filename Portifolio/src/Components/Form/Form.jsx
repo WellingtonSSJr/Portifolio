@@ -28,63 +28,63 @@ export default function Form() {
 
   return (
     <div className="min-h-screen bg-light-bg text-black dark:bg-dark-bg dark:text-white transition-colors duration-300 p-4">
-      <form ref={form} onSubmit={sendEmail} className="space-y-4 max-w-md">
+      <form ref={form} onSubmit={sendEmail} className="space-y-4 w-96 p-6">
         <div>
-          <label htmlFor="name" className="block mb-1 font-medium text-[#1A4027]">
+          <label htmlFor="name" className="block mb-1 font-medium text-gray-800">
             Nome
           </label>
           <input
             type="text"
             name="user_name"
             required
-            className="border-b w-full p-2 rounded  border-amber-700  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+            className="focus:outline-[#1ED760] focus:outline-1 focus:border-l-[#1ED760] w-full p-2 rounded  border-l-[#1A4027] border-l-3 shadow border-gray-200  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block mb-1 font-medium text-[#1A4027]">
+          <label htmlFor="email" className="block mb-1 font-medium text-gray-800">
             E-mail
           </label>
           <input
             type="email"
             name="user_email"
             required
-            className="border-b w-full p-2 rounded  border-amber-700  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+            className="focus:outline-[#1ED760] focus:outline-1 focus:border-l-[#1ED760] w-full p-2 rounded  border-l-[#1A4027] border-l-3 shadow border-gray-200  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
           />
         </div>
         <div>
-          <label htmlFor="assunto" className="block mb-1 font-medium text-[#1A4027]">
+          <label htmlFor="assunto" className="block mb-1 font-medium text-gray-800">
             Assunto
           </label>
           <input
             type="assunto"
             name="user_assunto"
             required
-            className="border-b w-full p-2 rounded  border-amber-700  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+            className="focus:outline-[#1ED760] focus:outline-1 focus:border-l-[#1ED760] w-full p-2 rounded  border-l-[#1A4027] border-l-3 shadow border-gray-200  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block mb-1 font-medium text-[#1A4027]">
+          <label htmlFor="message" className="block mb-1 font-medium text-gray-800">
             Mensagem
           </label>
           <textarea
             name="message"
             rows="5"
             required
-            className="border-b w-full p-2 rounded  border-amber-700  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+            className="focus:outline-[#1ED760] focus:outline-1 focus:border-l-[#1ED760] w-full p-2 rounded  border-l-[#1A4027] border-l-3 shadow border-gray-200  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          className="bg-amber-500 dark:bg-brand-dark-green text-amber-200 px-4 py-2 rounded hover:opacity-90"
+          className=" text-[#1ED760] dark:bg-brand-dark-green cursor-pointer px-4 py-2 rounded hover:opacity-90 w-max border-1 hover:border-1 hover:border-[#1ED760] border-b-2 border-l-2 shadow"
         >
           Enviar
         </button>
 
         {status && (
-          <p className="text-sm mt-2 text-green-600 dark:text-green-400">{status}</p>
+          <p className="text-sm mt-2 text-green-600 dark:text-green-400 rounded p-2 shadow">{status}</p>
         )}
       </form>
     </div>
