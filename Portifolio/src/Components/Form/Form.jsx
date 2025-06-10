@@ -27,10 +27,10 @@ export default function Form() {
   };
 
   return (
-    <div className="min-h-screen bg-light-bg text-black dark:bg-dark-bg dark:text-white transition-colors duration-300 p-4">
-      <form ref={form} onSubmit={sendEmail} className="space-y-4 w-96 p-6">
+    <div className="min-h-fit bg-light-bg text-black dark:bg-dark-bg dark:text-white transition-colors duration-300 p-4 ">
+      <form ref={form} onSubmit={sendEmail} className="space-y-4 w-96 p-6 flex flex-col">
         <div>
-          <label htmlFor="name" className="block mb-1 font-medium text-gray-800">
+          <label htmlFor="name" className="block mb-1 font-medium text-gray-800 dark:text-white">
             Nome
           </label>
           <input
@@ -42,7 +42,7 @@ export default function Form() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block mb-1 font-medium text-gray-800">
+          <label htmlFor="email" className="block mb-1 font-medium text-gray-800 dark:text-white">
             E-mail
           </label>
           <input
@@ -53,7 +53,7 @@ export default function Form() {
           />
         </div>
         <div>
-          <label htmlFor="assunto" className="block mb-1 font-medium text-gray-800">
+          <label htmlFor="assunto" className="block mb-1 font-medium text-gray-800 dark:text-white">
             Assunto
           </label>
           <input
@@ -65,7 +65,7 @@ export default function Form() {
         </div>
 
         <div>
-          <label htmlFor="message" className="block mb-1 font-medium text-gray-800">
+          <label htmlFor="message" className="block mb-1 font-medium text-gray-800 dark:text-white">
             Mensagem
           </label>
           <textarea
@@ -78,13 +78,13 @@ export default function Form() {
 
         <button
           type="submit"
-          className=" text-[#1ED760] dark:bg-brand-dark-green cursor-pointer px-4 py-2 rounded hover:opacity-90 w-max border-1 hover:border-1 hover:border-[#1ED760] border-b-2 border-l-2 shadow"
+          className=" text-[#1ED760] dark:bg-brand-dark-green cursor-pointer px-4 py-2 rounded hover:opacity-90  border-1 hover:border-1 hover:border-[#1ED760] border-b-2 border-l-2 shadow w-full text-center self-center"
         >
           Enviar
         </button>
 
         {status && (
-          <p className="text-sm mt-2 text-green-600 dark:text-green-400 rounded p-2 shadow">{status}</p>
+          <p className="text-sm text-center mt-2 text-green-600 dark:text-green-400 rounded p-2 shadow">{status}</p>
         )}
       </form>
     </div>

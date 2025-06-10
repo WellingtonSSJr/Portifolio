@@ -123,8 +123,8 @@ function Home() {
                     <div className={`fixed top-1/2 -translate-y-1/2 left-0 bg-white dark:bg-gray-800 shadow-lg rounded-r-lg transition-transform duration-300 ease-in-out z-10 ${menuInfoAberto ? 'translate-x-0' : '-translate-x-full'}`}>
                         <div className="relative p-4 flex flex-col gap-5 items-center justify-center">
                             {/* Ícones de contato também podem ser ajustados para o tema escuro se forem SVGs */}
-                            <a href="#" aria-label="GitHub"><img src={git} alt="GitHub" className="w-8 h-8" /></a>
-                            <a href="#" aria-label="LinkedIn"><img src={linkedin} alt="LinkedIn" className="w-8 h-8" /></a>
+                            <a href="https://github.com/WellingtonSSJr" aria-label="GitHub"><img src={git} alt="GitHub" className="w-8 h-8" /></a>
+                            <a href="https://www.linkedin.com/in/wellingtonssoares/?trk=opento_sprofile_details" aria-label="LinkedIn"><img src={linkedin} alt="LinkedIn" className="w-8 h-8" /></a>
                         </div>
                          <button 
                             className='absolute left-full top-1/2 -translate-y-1/2 w-9 bg-white dark:bg-gray-800 py-3 rounded-tr-lg rounded-br-lg cursor-pointer shadow-lg'
@@ -242,18 +242,23 @@ function Home() {
                 <span className='w-24 h-2 rounded shadow bg-gray-300 dark:bg-gray-700 my-8 border-[#1ED760] border-2'></span>
                 
                 {/* SEÇÃO CONTATO */}
-                <section id='contatos' className='flex flex-col justify-center items-center gap-8 my-8 w-full max-w-6xl mx-auto min-h-[50vh]'>
+                <section id='contatos' className='flex flex-col justify-center items-center gap-12 my-8 w-full max-w-6xl mx-auto'>
                     <div className='flex flex-col md:flex-row items-center gap-4 md:gap-8'>
                         <motion.h1 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="text-5xl font-black text-gray-800 dark:text-white text-left md:text-left">
                             CON<br />
                             TATOS<span className="text-[#1ED760] animate-pulse drop-shadow-[0_0_6px_#1ED760]">.</span>
                         </motion.h1>
-                        <p className='text-center md:text-left max-w-xl text-gray-600 dark:text-gray-400 font-medium leading-8'>
+                        <p className='text-center md:text-left max-w-xl max-sm:w-80 text-gray-600 dark:text-gray-400 font-medium leading-8'> 
                             Gostou do que viu? Entre em contato comigo através das minhas redes sociais ou me envie um e-mail.
                         </p>
                     </div>
 
                     <Form/>
+
+                    <div className='flex gap-8 underline-'>
+                        <a target='_blank' href="https://www.linkedin.com/in/wellingtonssoares/?trk=opento_sprofile_details dark:text-white" className=' animate-bounce  hover:text-[#1ED760]'>Linkedin</a>
+                        <a target='_blank' href="https://github.com/WellingtonSSJr" className=' animate-bounce hover:text-[#1ED760] dark:text-white'>GitHub</a>
+                    </div>
                 </section>
             </main>
         </div>
