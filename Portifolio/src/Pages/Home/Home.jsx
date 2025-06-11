@@ -4,6 +4,7 @@ import { Sun, Moon } from 'lucide-react'; // Exemplo de ícones. Instale: npm i 
 // Suas importações de assets
 import fotoPerfil from './../../assets/images/perfil.jpg';
 import logowelldev from './../../assets/images/welldevLogo.svg';
+import logowelldevdark from './../../assets/images/logodark.svg';
 import imageBg from './../../assets/images/imageBgLeft.png';
 import image1 from './../../assets/images/imagem1.jpg';
 import image2 from './../../assets/images/imagem2.jpg';
@@ -15,6 +16,7 @@ import Carrossel from '../../Components/Carrossel/Carrossel';
 import { motion } from "framer-motion";
 import Form from '../../Components/Form/Form';
 import Teste from '../../Components/teste/teste';
+
 function Home() {
     // Seus estados existentes
     const [menuAberto, setMenuAberto] = useState(false);
@@ -24,7 +26,6 @@ function Home() {
     const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
 
     console.log(theme);
-    
 
     useEffect(() => {
         const root = window.document.documentElement;
@@ -62,8 +63,9 @@ function Home() {
                 
                 <header className="fixed left-0 right-0 flex items-center justify-between px-4 sm:px-10 py-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md z-20">
                     <div className="min-w-28 h-max p-2 flex items-center gap-3">
-                        <img src={fotoPerfil} alt="Foto de Perfil" className="sm:hidden h-12 w-12 shrink-0 rounded-full" />
-                        <img src={logowelldev} alt="Logo Welldev" className="h-6" />
+                        <img src={fotoPerfil} alt="Foto de Perfil" className="sm:hidden h-12 w-12 shrink-0 rounded-full " />
+                        <img src={logowelldev} alt="Logo Welldev" className="h-5  dark:hidden" />
+                        <img src={logowelldevdark} alt="Logo Welldev" className="h-8 invisible dark:visible" />
                     </div>
 
                     {/* Menu padrão */}
@@ -115,7 +117,7 @@ function Home() {
                     <p className='max-w-xl mx-auto mt-4 text-gray-600 dark:text-gray-400 text-lg sm:text-xl md:text-2xl'>
                         Desenvolvedor front-end React Jr. Curioso back-end. E um pouco de full-stack.
                     </p>
-                    <a href="#contato" className='bg-[#1ED760] mt-8 px-8 py-3 rounded shadow text-[#1A4027] font-medium transform transition hover:-translate-y-1'>
+                    <a href="#contatos" className='bg-[#1ED760] mt-8 px-8 py-3 rounded shadow text-[#1A4027] font-medium transform transition hover:-translate-y-1'>
                         CONTATO
                     </a>
 
@@ -192,7 +194,7 @@ function Home() {
                             JETOS<span className="text-[#1ED760] animate-pulse drop-shadow-[0_0_6px_#1ED760]">.</span>
                         </motion.h1>
                         <p className='text-center md:text-left max-w-xl text-gray-600 dark:text-gray-400 font-medium leading-8'>Essa seção é destinada a mostrar meus projetos pessoais e corporativos onde pratico e desenvolvo minhas habilidades.</p>
-                    </div> 	
+                    </div>  
 
                     <div className='flex flex-col items-center w-full gap-16 mt-8'>
                         {/* PROJETO 1 */}
@@ -261,6 +263,23 @@ function Home() {
                     </div>
                 </section>
             </main>
+            
+            {/* --- INÍCIO DO FOOTER--- */}
+            <footer>
+                <div className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 transition-colors duration-300">
+                    <div className="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-600 dark:text-gray-400">
+                        <img src={logowelldev} alt="Logo Welldev" className="h-7 mx-auto mb-4 opacity-80" />
+                        <p className="mb-2">
+                            Desenvolvido com React, Tailwind CSS e muito café por <strong>Wellington Soares</strong>.
+                        </p>
+                        <p>
+                            &copy; {new Date().getFullYear()} WellDev. Todos os direitos reservados.
+                        </p>
+                    </div>
+                </div>
+            </footer>
+            {/* --- FIM DO FOOTER --- */}
+
         </div>
     ) 
 }
