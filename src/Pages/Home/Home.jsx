@@ -70,7 +70,7 @@ function Home() {
                     {/* Menu padrão */}
                     <nav className="hidden sm:flex items-center gap-4">
                         <ul className="flex gap-6 text-[#1A4027] dark:text-gray-200 font-semibold">
-                            <li><a href="/" className="hover:text-[#1ED760] transition-colors">HOME</a></li>
+                            <li><a href="/" className="hover:text-[#1ED760] transition-colors">HOMEeee</a></li>
                             <li><a href="#sobre" className="hover:text-[#1ED760] transition-colors">SOBRE</a></li>
                             <li><a href="#projetos" className="hover:text-[#1ED760] transition-colors">PROJETOS</a></li>
                             <li><a href="#contatos" className="hover:text-[#1ED760] transition-colors">CONTATOS</a></li>
