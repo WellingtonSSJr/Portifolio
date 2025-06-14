@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react'; // Importando os hooks neces
 import { Sun, Moon } from 'lucide-react'; // Exemplo de ícones. Instale: npm i lucide-react
 
 // Suas importações de assets
-import fotoPerfil from './../../assets/images/perfil.jpg';
-import logowelldev from './../../assets/images/welldevLogo.svg';
-import logowelldevdark from './../../assets/images/logodark.svg';
-import imageBg from './../../assets/images/imageBgLeft.png';
-import image1 from './../../assets/images/imagem1.jpg';
-import image2 from './../../assets/images/imagem2.jpg';
-import image3 from './../../assets/images/imagem3.jpg';
-import git from './../../assets/icons/git.png';
-import linkedin from './../../assets/icons/linkedin.png';
-import openCloseModalCtt from './../../assets/icons/openCloseModalCtt.svg';
+import fotoPerfil from './../../../public/images/perfil.jpg';
+import logowelldev from './../../../public/images/welldevLogo.svg';
+import logowelldevdark from './../../../public//images/logodark.svg';
+// import imageBg from './../../assets/images/imageBgLeft.png';
+import imageBg from './../../../public/images/imageBgLeft.png';
+import image1 from './../../../public/images/imagem1.jpg';
+import image2 from './../../../public/images/imagem2.jpg';
+import image3 from './../../../public/images/imagem3.jpg';
+import git from './../../../public/icons/git.png';
+import linkedin from './../../../public/icons/linkedin.png';
+import openCloseModalCtt from './../../../public/icons/openCloseModalCtt.svg';
 import Carrossel from '../../Components/Carrossel/Carrossel';
 import { motion } from "framer-motion";
 import Form from '../../Components/Form/Form';
-import Teste from '../../Components/teste/teste';
 
 function Home() {
     // Seus estados existentes

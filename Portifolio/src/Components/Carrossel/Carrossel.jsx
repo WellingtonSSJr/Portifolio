@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from "motion/react"
 // import t from '/src/assets/images/imagem2.jpg'
-import tt from './../../assets/images/imagem1.jpg'
 
 function Carrossel(props) {
     const carrosssel = React.useRef()
@@ -24,12 +23,15 @@ function Carrossel(props) {
                         transition={{duration: 0.8}}
                     >
                         {props.images?.map((item, index) => (
+                            // console.log(item)
+                            
                             <motion.div
                                 key={index}
                                 className="max-sm:h-40 h-[280px] w-fir flex-shrink-0 rounded shadow"
                             >
                                 <img
-                                src={`/src${item.slice(4)}`}
+                                // src={`/src${item.slice(4)}`}
+                                src={item}
                                 alt="imagem de projeto"
                                 className="w-full h-full object-contain rounded shadow"
                                 />
