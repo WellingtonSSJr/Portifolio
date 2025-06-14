@@ -70,7 +70,7 @@ function Home() {
                     {/* Menu padrão */}
                     <nav className="hidden sm:flex items-center gap-4">
                         <ul className="flex gap-6 text-[#1A4027] dark:text-gray-200 font-semibold">
-                            <li><a href="/Portifolio/" className="hover:text-[#1ED760] transition-colors">HOME</a></li>
+                            <li><a href="https://wellingtonssjr.github.io/Portifolio/" className="hover:text-[#1ED760] transition-colors">HOME</a></li>
                             <li><a href="#sobre" className="hover:text-[#1ED760] transition-colors">SOBRE</a></li>
                             <li><a href="#projetos" className="hover:text-[#1ED760] transition-colors">PROJETOS</a></li>
                             <li><a href="#contatos" className="hover:text-[#1ED760] transition-colors">CONTATOS</a></li>
@@ -101,7 +101,7 @@ function Home() {
                             className="absolute top-full right-0 w-52 m-4 rounded bg-[#1ED760] sm:hidden shadow-lg border-[#1A4027]/45 border animate-fade-in z-40"
                         >
                             <ul className="flex flex-col items-center gap-4 p-4 text-[#2C344B] font-semibold">
-                                <li><a href="/Portifolio/" onClick={() => setMenuAberto(false)}>HOME</a></li>
+                                <li><a href="https://wellingtonssjr.github.io/Portifolio/" onClick={() => setMenuAberto(false)}>HOME</a></li>
                                 <li><a href="#sobre" onClick={() => setMenuAberto(false)}>SOBRE</a></li>
                                 <li><a href="#projetos" onClick={() => setMenuAberto(false)}>PROJETOS</a></li>
                                 <li><a href="#contatos" onClick={() => setMenuAberto(false)}>CONTATOS</a></li>
