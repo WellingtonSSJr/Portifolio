@@ -92,6 +92,7 @@ function Home() {
                             <span className={`absolute h-0.5 w-6 bg-current rounded transition-all duration-300 ${menuAberto ? 'opacity-0' : 'opacity-100'}`}></span>
                             <span className={`absolute h-0.5 w-6 bg-current rounded transition-all duration-300 ${menuAberto ? '-rotate-45' : 'translate-y-2'}`}></span>
                         </button>
+                        
                     </div>
 
                     {/* Menu mobile (dropdown) */}
