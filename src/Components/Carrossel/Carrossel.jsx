@@ -31,7 +31,7 @@ function Carrossel(props) {
                             >
                                 <img
                                 // src={`/src${item.slice(4)}`}
-                                src={item.replace('/Portifolio', '')}
+                                src={item.replace('/Portifolio/', './')}
                                 alt="imagem de projeto"
                                 className="w-full h-full object-contain rounded shadow"
                                 />
