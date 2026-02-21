@@ -27,8 +27,8 @@ export default function Form() {
   };
 
   return (
-    <div className="min-h-fit bg-light-bg text-black dark:bg-dark-bg dark:text-white transition-colors duration-300 p-4 ">
-      <form ref={form} onSubmit={sendEmail} className="space-y-4 w-96 p-6 flex flex-col">
+    <div className="flex items-centermin-h-fit bg-light-bg text-black dark:bg-dark-bg dark:text-white transition-colors duration-300 p-4  w-96">
+      <form ref={form} onSubmit={sendEmail} className="space-y-4 w-screen p-6 flex flex-col">
         <div>
           <label htmlFor="name" className="block mb-1 font-medium text-gray-800 dark:text-white">
             Nome
