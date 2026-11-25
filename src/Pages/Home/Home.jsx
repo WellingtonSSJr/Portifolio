@@ -9,6 +9,7 @@ import {
   Github,
   Linkedin,
   MapPin,
+  MessageCircle,
 } from 'lucide-react';
 
 import fotoPerfil from '../../assets/images/perfil.jpg';
@@ -17,6 +18,9 @@ import logowelldevdark from '../../assets/images/logodark.svg';
 import ProjectShowcase from '../../Components/Projects/ProjectShowcase';
 import Form from '../../Components/Form/Form';
 import { PROJECTS, SKILLS } from '../../data/projects';
+
+const WHATSAPP_URL =
+  'https://wa.me/5522997981894?text=Ol%C3%A1%20Wellington!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.';
 
 const NAV_ITEMS = [
   { href: '#sobre', label: 'Sobre' },
@@ -188,6 +192,15 @@ function Home() {
               </div>
 
               <div className="pt-4 flex flex-wrap items-center gap-5 text-sm text-gray-600 dark:text-gray-400">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 hover:text-[#1A4027] dark:hover:text-[#1ED760] transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp</span>
+                </a>
                 <a
                   href="https://github.com/WellingtonSSJr"
                   target="_blank"
@@ -387,6 +400,26 @@ function Home() {
                 </p>
 
                 <div className="pt-2 space-y-2.5">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3.5 rounded-md border border-[#1A4027]/15 dark:border-gray-800 hover:border-[#1ED760] transition-colors group"
+                  >
+                    <div className="flex items-center gap-3">
+                      <MessageCircle className="w-4 h-4 text-[#1A4027] dark:text-[#1ED760]" />
+                      <div>
+                        <p className="text-sm font-semibold text-[#1A4027] dark:text-white">
+                          WhatsApp
+                        </p>
+                        <p className="font-mono text-xs text-gray-500 dark:text-gray-400">
+                          (22) 99798-1894
+                        </p>
+                      </div>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-[#1ED760] transition-colors" />
+                  </a>
+
                   <a
                     href="https://www.linkedin.com/in/wellingtonssoares/"
                     target="_blank"

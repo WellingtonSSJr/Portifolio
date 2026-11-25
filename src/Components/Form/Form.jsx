@@ -32,7 +32,7 @@ export default function Form() {
         () => {
           setFeedback({
             type: 'error',
-            message: 'Não foi possível enviar agora. Tente novamente ou fale pelo LinkedIn.',
+            message: 'Não foi possível enviar agora. Tente novamente ou chame no WhatsApp.',
           });
         }
       )
