@@ -1,12 +1,18 @@
 import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
+import { Send } from 'lucide-react';
 
 export default function Form() {
-  const form = useRef();
-  const [status, setStatus] = useState('');
+  const form = useRef(null);
+  const [sending, setSending] = useState(false);
+  const [feedback, setFeedback] = useState({ type: '', message: '' });
 
   const sendEmail = (e) => {
     e.preventDefault();
+    if (sending) return;
+
+    setSending(true);
+    setFeedback({ type: '', message: '' });
 
     emailjs
       .sendForm(
@@ -17,76 +23,126 @@ export default function Form() {
       )
       .then(
         () => {
-          setStatus('Mensagem enviada com sucesso!');
-          form.current.reset();
+          setFeedback({
+            type: 'success',
+            message: 'Mensagem enviada. Retorno em breve.',
+          });
+          form.current?.reset();
         },
         () => {
-          setStatus('Erro ao enviar. Tente novamente.');
+          setFeedback({
+            type: 'error',
+            message: 'Não foi possível enviar agora. Tente novamente ou fale pelo LinkedIn.',
+          });
         }
-      );
+      )
+      .finally(() => {
+        setSending(false);
+      });
   };
 
+  const inputClass =
+    'w-full px-3.5 py-2.5 rounded-md border border-[#1A4027]/20 dark:border-gray-700 bg-white dark:bg-[#0F1724] text-sm text-[#1A4027] dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:border-[#1ED760] focus:ring-1 focus:ring-[#1ED760] transition-colors';
+
   return (
-    <div className="flex items-centermin-h-fit bg-light-bg text-black dark:bg-dark-bg dark:text-white transition-colors duration-300 p-4  w-96">
-      <form ref={form} onSubmit={sendEmail} className="space-y-4 w-screen p-6 flex flex-col">
+    <form
+      ref={form}
+      onSubmit={sendEmail}
+      className="w-full rounded-lg border border-[#1A4027]/15 dark:border-gray-800 bg-white dark:bg-[#131C2C] p-6 sm:p-7 space-y-4"
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="name" className="block mb-1 font-medium text-gray-800 dark:text-white">
+          <label
+            htmlFor="user_name"
+            className="block mb-1.5 font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400"
+          >
             Nome
           </label>
           <input
+            id="user_name"
             type="text"
             name="user_name"
+            placeholder="Seu nome"
             required
-            className="focus:outline-[#1ED760] focus:outline-1 focus:border-l-[#1ED760] w-full p-2 rounded  border-l-[#1A4027] border-l-3 shadow border-gray-200  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+            className={inputClass}
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block mb-1 font-medium text-gray-800 dark:text-white">
+          <label
+            htmlFor="user_email"
+            className="block mb-1.5 font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400"
+          >
             E-mail
           </label>
           <input
+            id="user_email"
             type="email"
             name="user_email"
+            placeholder="voce@exemplo.com"
             required
-            className="focus:outline-[#1ED760] focus:outline-1 focus:border-l-[#1ED760] w-full p-2 rounded  border-l-[#1A4027] border-l-3 shadow border-gray-200  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
+            className={inputClass}
           />
         </div>
-        <div>
-          <label htmlFor="assunto" className="block mb-1 font-medium text-gray-800 dark:text-white">
-            Assunto
-          </label>
-          <input
-            type="assunto"
-            name="user_assunto"
-            required
-            className="focus:outline-[#1ED760] focus:outline-1 focus:border-l-[#1ED760] w-full p-2 rounded  border-l-[#1A4027] border-l-3 shadow border-gray-200  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
-          />
-        </div>
+      </div>
 
-        <div>
-          <label htmlFor="message" className="block mb-1 font-medium text-gray-800 dark:text-white">
-            Mensagem
-          </label>
-          <textarea
-            name="message"
-            rows="5"
-            required
-            className="focus:outline-[#1ED760] focus:outline-1 focus:border-l-[#1ED760] w-full p-2 rounded  border-l-[#1A4027] border-l-3 shadow border-gray-200  bg-white dark:bg-gray-800 border dark:border-gray-600 text-black dark:text-white"
-          ></textarea>
-        </div>
+      <div>
+        <label
+          htmlFor="user_assunto"
+          className="block mb-1.5 font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400"
+        >
+          Assunto
+        </label>
+        <input
+          id="user_assunto"
+          type="text"
+          name="user_assunto"
+          placeholder="Projeto, vaga ou freela"
+          required
+          className={inputClass}
+        />
+      </div>
 
+      <div>
+        <label
+          htmlFor="message"
+          className="block mb-1.5 font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400"
+        >
+          Mensagem
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows={5}
+          placeholder="Conte um pouco sobre o que você precisa..."
+          required
+          className={`${inputClass} resize-y`}
+        />
+      </div>
+
+      <div className="pt-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <button
           type="submit"
-          className=" text-[#1ED760] dark:bg-brand-dark-green cursor-pointer px-4 py-2 rounded hover:opacity-90  border-1 hover:border-1 hover:border-[#1ED760] border-b-2 border-l-2 shadow w-full text-center self-center"
+          disabled={sending}
+          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[#1A4027] text-white dark:bg-[#1ED760] dark:text-[#111827] text-sm font-semibold hover:opacity-90 disabled:opacity-60 transition-opacity cursor-pointer"
         >
-          Enviar
+          <Send className="w-4 h-4" />
+          {sending ? 'Enviando...' : 'Enviar mensagem'}
         </button>
 
-        {status && (
-          <p className="text-sm text-center mt-2 text-green-600 dark:text-green-400 rounded p-2 shadow">{status}</p>
+        {feedback.message && (
+          <p
+            role="status"
+            className={`text-xs font-medium ${
+              feedback.type === 'success'
+                ? 'text-[#1A4027] dark:text-[#1ED760]'
+                : 'text-red-600 dark:text-red-400'
+            }`}
+          >
+            {feedback.message}
+          </p>
         )}
-      </form>
-    </div>
+      </div>
+    </form>
   );
 }

@@ -1,13 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import "tailwindcss";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-
-*{
-    font-family: "Roboto Mono", monospace;
-    
+@theme {
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-brand: #1ED760;
+  --color-brand-bright: #32FF5F;
+  --color-forest: #1A4027;
+  --color-surface-light: #EBECEB;
+  --color-surface-dark: #111827;
+  --color-surface-dark-alt: #121A2A;
 }
-html .dark{
-    /* /* background: #DBDBDB; */
-    background: #121a2a !important; 
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #F4F5F4;
+    color: #1A4027;
+  }
+
+  html[data-theme="dark"] {
+    background-color: #111827;
+    color: #F3F4F6;
+  }
+
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  ::selection {
+    background-color: #1ED760;
+    color: #1A4027;
+  }
 }
